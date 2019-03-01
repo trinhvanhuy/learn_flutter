@@ -1,40 +1,25 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:flutter/material.dart';
+import 'package:hello_rectangle/category.dart';
+
+const _categoryName = 'Cake';
+const _caregoryIcon = Icons.cake;
+const _categoryColor = Colors.green;
 
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Hello Rectangle',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Hello Rectangle'),
-        ),
-        body: HelloRectangle(),
-      ),
-    ),
-  );
+  runApp(UnitConverterApp());
 }
 
-class HelloRectangle extends StatelessWidget {
+class UnitConverterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        color: Colors.greenAccent,
-        height: 400.0,
-        width: 300.0,
-        child: Center(
-          child: Text(
-            'Hello!',
-            style: TextStyle(fontSize: 40.0),
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ),
-    );
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Unit Converter',
+        home: Scaffold(
+            backgroundColor: Colors.green[100],
+            body: Padding(
+              padding: EdgeInsets.only(top: 100),
+              child: Category(_categoryName, _caregoryIcon, _categoryColor),
+            )));
   }
 }
